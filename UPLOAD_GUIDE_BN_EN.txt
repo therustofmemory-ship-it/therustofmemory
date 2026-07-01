@@ -1,0 +1,20 @@
+TRM GitHub Upload Guide / গিটহাব আপলোড গাইড
+
+1) ZIP file extract করুন।
+2) Repository root/main জায়গায় সব files upload করুন। শুধু ZIP upload করবেন না।
+3) এই files/folders root-এ থাকতে হবে:
+   index.html
+   freelance.html
+   hardware.html
+   styles.css
+   script.js
+   trm-logo.png
+   favicon.png
+   assets/
+4) GitHub Pages setting:
+   Settings > Pages > Deploy from a branch > main > /root > Save
+5) Commit message দিতে পারেন:
+   Optimize website for mobile and desktop
+
+English:
+Extract the ZIP and upload all files and folders to the root of your GitHub repository. Then enable GitHub Pages from Settings > Pages.

@@ -193,3 +193,66 @@ body.dark-mode .showcase-card,
 body.dark-mode .case-study{box-shadow:0 24px 80px rgba(0,0,0,.34)}
 
 @media(max-width:850px){body.dark-mode .nav-links{background:#111827;border:1px solid rgba(255,255,255,.10)}}
+
+
+/* =========================================================
+   TRM responsive optimization layer v3
+   Desktop + tablet + mobile polish for GitHub Pages
+   ========================================================= */
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{width:100%;max-width:100%;touch-action:manipulation}
+img,svg,video,canvas{max-width:100%;height:auto}
+main{width:100%;overflow:hidden}.site-header,.section,.site-footer{max-width:calc(100% - 20px)}
+.site-header{gap:14px}.brand{min-width:0}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nav-links a{white-space:nowrap}.theme-toggle,.menu-btn{flex:0 0 auto}.btn{min-height:50px;text-align:center}.hero-copy,.digital-hero-copy{min-width:0}.hero-copy p,.page-hero p,.digital-hero-copy p{max-width:680px}.hero-card,.digital-orbit{width:100%}.digital-orbit .orbit-center img{aspect-ratio:1/1}.showcase-copy{z-index:2}.quote-form input,.quote-form select,.quote-form textarea{font-size:16px}.contact-widget{max-width:calc(100vw - 28px)}
+
+@media(max-width:1180px){
+  .section{width:min(1040px,92%)}
+  .hero,.digital-hero{grid-template-columns:1fr;gap:34px;min-height:auto;padding-top:62px}
+  .hero-copy,.digital-hero-copy{text-align:left}
+  .digital-orbit,.hero-card{max-width:620px;margin:0 auto;min-height:460px}
+  .digital-orbit .orbit-center{width:170px;height:170px}.digital-orbit .orbit-center img{width:150px;height:150px}
+  .orbit-item{--radius:150px!important;padding:13px 18px;font-size:15px}
+  .premium-service-grid,.details-grid{grid-template-columns:repeat(2,1fr)}
+  .premium-strip,.stats-section,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .industry-grid{grid-template-columns:repeat(3,1fr)}
+  .premium-timeline,.timeline{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:900px){
+  .site-header{top:10px;margin-top:10px;padding:10px 12px;border-radius:24px}
+  .brand img{width:42px;height:42px}.brand span{font-size:15px;max-width:42vw}
+  .theme-toggle,.menu-btn{width:42px;height:42px}
+  .nav-links{position:absolute;top:68px;right:0;left:0;margin:auto;width:100%;display:none;flex-direction:column;gap:6px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);border-radius:22px;padding:12px;box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+  .nav-links.open{display:flex}.nav-links a{padding:13px 14px;border-radius:16px;background:rgba(47,125,119,.06)}.menu-btn{display:grid;place-items:center}
+  .section{width:min(760px,92%);padding:48px 0}.compact{padding-top:10px}
+  h1{font-size:clamp(38px,8vw,58px);line-height:1.02}h2{font-size:clamp(30px,6.5vw,46px)}h3{font-size:24px}
+  p,.hero-copy p,.page-hero p,.digital-hero-copy p{font-size:16px;line-height:1.65}.eyebrow{font-size:11px;letter-spacing:.13em}
+  .hero-actions{gap:12px;margin-top:26px}.btn{padding:14px 18px}
+  .service-choice,.why-section,.showcase-section,.case-grid,.quote-box{grid-template-columns:1fr}.showcase-copy{position:static}.showcase-grid{grid-template-columns:1fr 1fr}
+  .site-footer{flex-direction:column;align-items:flex-start;padding:26px;border-radius:26px}.footer-actions{flex-wrap:wrap}
+  .process,.skills-section,.portfolio,.faq,.industries,.quote-box{padding:28px;border-radius:28px;margin-bottom:48px}
+}
+
+@media(max-width:640px){
+  .site-header{width:calc(100% - 18px);max-width:calc(100% - 18px);padding:8px 9px;border-radius:22px}.brand{gap:8px}.brand img{width:38px;height:38px}.brand span{font-size:14px;max-width:46vw}.theme-toggle,.menu-btn{width:38px;height:38px;font-size:16px}
+  .section{width:min(100% - 28px,560px);padding:40px 0}.hero,.digital-hero{padding-top:38px;gap:28px}
+  h1{font-size:clamp(34px,10.5vw,44px);letter-spacing:-.06em}h2{font-size:clamp(28px,8vw,38px)}h3{font-size:22px}
+  .hero-actions{flex-direction:column}.hero-actions .btn,.page-hero .btn,.final-cta .btn{width:100%}
+  .hero-card{min-height:330px;border-radius:30px}.hero-card:before{inset:22px;border-radius:24px}.glass-panel{left:18px;right:18px;bottom:18px;padding:20px;border-radius:22px}.stat-grid{grid-template-columns:1fr;gap:10px}.stat-grid div{padding:14px}
+  .digital-orbit{min-height:360px;border-radius:30px}.orbit-ring{inset:55px}.orbit-item{--radius:118px!important;padding:10px 14px;border-radius:999px;font-size:13px}.digital-orbit .orbit-center{width:118px;height:118px}.digital-orbit .orbit-center img{width:104px;height:104px}
+  .premium-strip,.premium-service-grid,.details-grid,.stats-section,.portfolio-grid,.timeline,.premium-timeline,.industry-grid{grid-template-columns:1fr}
+  .choice-card,.detail-card,.premium-service-card,.why-grid article{padding:24px;border-radius:24px}.icon-bubble{width:58px;height:58px;border-radius:19px;font-size:26px}
+  .showcase-grid{grid-template-columns:1fr}.showcase-card,.showcase-card.tall,.showcase-card.wide{min-height:205px;grid-column:auto;grid-row:auto}
+  .case-grid article{padding:20px}.quote-box{gap:22px}.quote-form{grid-template-columns:1fr}.quote-form textarea,.quote-form button{grid-column:auto}.final-cta{padding:44px 20px;border-radius:30px}
+  .footer-actions{width:100%}.footer-actions a{flex:1;text-align:center}.contact-widget{right:12px;bottom:12px}.back-top{right:12px;bottom:118px}
+  .cursor-glow{display:none}
+}
+
+@media(max-width:380px){
+  .brand span{max-width:38vw;font-size:13px}.site-header{gap:6px}.theme-toggle,.menu-btn{width:36px;height:36px}.section{width:min(100% - 22px,360px)}
+  h1{font-size:32px}.btn{font-size:14px;padding:13px 15px}.orbit-item{--radius:105px!important;font-size:12px;padding:9px 12px}.digital-orbit{min-height:330px}.digital-orbit .orbit-center{width:100px;height:100px}.digital-orbit .orbit-center img{width:88px;height:88px}
+}
+
+@media(hover:none){.btn:hover,.choice-card:hover,.detail-card:hover,.why-grid article:hover,.premium-service-card:hover,.showcase-card:hover,.tool-logo:hover,.contact-btn:hover{transform:none}.magnetic{transform:none!important}}
+@media(pointer:coarse){.cursor-glow{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}}
