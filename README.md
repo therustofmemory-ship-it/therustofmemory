@@ -29,3 +29,7 @@ WhatsApp: +91 9382615603
 Upload all files and folders to the root of your GitHub repository, then enable GitHub Pages from:
 
 `Settings → Pages → Deploy from a branch → main → /root`
+
+## Final optimization
+
+This build includes mobile/tablet/desktop responsive tuning, GitHub Pages `.nojekyll`, optimized image files, and cache-busted CSS/JS links.

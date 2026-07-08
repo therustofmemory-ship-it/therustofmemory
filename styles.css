@@ -256,3 +256,260 @@ main{width:100%;overflow:hidden}.site-header,.section,.site-footer{max-width:cal
 @media(hover:none){.btn:hover,.choice-card:hover,.detail-card:hover,.why-grid article:hover,.premium-service-card:hover,.showcase-card:hover,.tool-logo:hover,.contact-btn:hover{transform:none}.magnetic{transform:none!important}}
 @media(pointer:coarse){.cursor-glow{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}}
+
+
+/* Showcase image enhancement */
+.showcase-card{isolation:isolate;background:#102622}
+.showcase-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .65s ease}
+.showcase-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,17,.06),rgba(8,18,17,.84)),linear-gradient(90deg,rgba(0,0,0,.42),rgba(0,0,0,.04) 58%,rgba(0,0,0,.22));z-index:0}
+.showcase-card:after{z-index:0;opacity:.82}
+.showcase-card span,.showcase-card strong{position:relative;z-index:1;max-width:78%}
+.showcase-card.wide span,.showcase-card.wide strong{max-width:42%}
+.showcase-card:hover .showcase-image{transform:scale(1.06)}
+.showcase-website .showcase-image{object-position:center top}
+.showcase-branding .showcase-image{object-position:center center}
+.showcase-uiux .showcase-image{object-position:center center}
+.showcase-3d .showcase-image{object-position:center center}
+@media(max-width:850px){.showcase-card.wide span,.showcase-card.wide strong{max-width:78%}}
+
+
+/* Hero portrait enhancement */
+.hero-card{isolation:isolate}
+.hero-portrait-wrap{position:absolute;top:38px;right:8px;bottom:42px;width:min(51%,332px);display:flex;align-items:flex-end;justify-content:flex-end;z-index:3;pointer-events:none}
+.hero-portrait-wrap:before{content:"";position:absolute;left:8%;right:4%;top:4%;bottom:12%;background:radial-gradient(circle at 50% 18%,rgba(117,247,232,.52),rgba(47,125,119,.22) 36%,rgba(47,125,119,.08) 58%,transparent 76%);filter:blur(13px);opacity:.94}
+.hero-portrait{position:relative;display:block;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom right;filter:drop-shadow(0 24px 46px rgba(5,16,16,.40)) drop-shadow(0 0 18px rgba(95,245,228,.20))}
+.glass-panel{z-index:2;padding-right:214px}
+.glass-panel .panel-label,.glass-panel h2,.glass-panel .stat-grid{position:relative;z-index:4}
+@media(max-width:1100px){.hero-portrait-wrap{top:34px;right:10px;bottom:38px;width:min(50%,300px)}.glass-panel{padding-right:190px}}
+@media(max-width:850px){.hero-portrait-wrap{top:22px;right:10px;bottom:28px;width:min(48%,225px)}.glass-panel{padding-right:148px}}
+@media(max-width:520px){.hero-portrait-wrap{top:20px;right:8px;bottom:24px;width:min(46%,170px)}.hero-portrait-wrap:before{left:4%;right:0;top:8%;bottom:14%}.glass-panel{padding-right:118px}}
+
+/* Final hero card adjustment: portrait shifted left inside inner box, glass cards above portrait */
+.hero-card{isolation:isolate}
+.hero-portrait-wrap{
+  right:44px;
+  bottom:34px;
+  width:min(50%,318px);
+  z-index:3;
+}
+.hero-portrait{object-position:bottom center}
+.glass-panel{
+  z-index:5;
+}
+.stat-grid{
+  position:relative;
+  z-index:8;
+  max-width:390px;
+}
+.stat-grid div{
+  position:relative;
+  z-index:9;
+}
+@media(max-width:1100px){
+  .hero-portrait-wrap{right:46px;bottom:32px;width:min(49%,292px)}
+  .glass-panel{padding-right:170px}
+  .stat-grid{max-width:300px}
+}
+@media(max-width:850px){
+  .hero-portrait-wrap{right:34px;bottom:26px;width:min(47%,218px)}
+  .glass-panel{padding-right:135px}
+  .stat-grid{max-width:270px}
+}
+@media(max-width:520px){
+  .hero-portrait-wrap{right:24px;bottom:22px;width:min(45%,162px)}
+  .glass-panel{padding-right:108px}
+  .stat-grid{max-width:230px}
+}
+
+/* Final fixed hero layering: photo stays clear, only 02 glass card appears above photo */
+.hero-card{isolation:isolate;position:relative;overflow:hidden}
+.hero-card:before{z-index:1;pointer-events:none}
+.hero-card:after{z-index:0;pointer-events:none}
+.hero-card .glass-panel{
+  position:absolute;
+  left:34px;
+  right:34px;
+  top:34px;
+  bottom:34px;
+  padding:58px 30px 30px;
+  border-radius:30px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(16px);
+  color:#fff;
+  z-index:2;
+}
+.hero-card .glass-panel .status-dot,
+.hero-card .glass-panel .panel-label,
+.hero-card .glass-panel h2{position:relative;z-index:3}
+.hero-card .glass-panel h2{max-width:310px;font-size:clamp(44px,5vw,64px);line-height:1.18}
+.hero-portrait-wrap{
+  position:absolute;
+  top:78px;
+  right:54px;
+  bottom:34px;
+  width:min(49%,330px);
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  z-index:4;
+  pointer-events:none;
+}
+.hero-portrait-wrap:before{z-index:0}
+.hero-portrait{position:relative;z-index:1;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 24px 46px rgba(5,16,16,.40)) drop-shadow(0 0 18px rgba(95,245,228,.18))}
+.hero-card .hero-stat-grid{
+  position:absolute;
+  left:64px;
+  bottom:86px;
+  display:grid;
+  grid-template-columns:repeat(2,128px);
+  gap:18px;
+  margin:0;
+  width:auto;
+  max-width:none;
+  z-index:8;
+}
+.hero-card .hero-stat-grid div{
+  min-height:116px;
+  padding:20px 22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(14px);
+  color:#fff;
+  box-shadow:none;
+}
+.hero-card .hero-stat-grid div:nth-child(2){
+  background:rgba(255,255,255,.20);
+  border-color:rgba(255,255,255,.32);
+  box-shadow:0 18px 45px rgba(0,0,0,.14);
+  z-index:9;
+}
+.hero-card .hero-stat-grid strong{display:block;font-size:28px;line-height:1.1;margin-bottom:12px;color:#fff}
+.hero-card .hero-stat-grid span{display:block;font-size:14px;line-height:1.55;color:rgba(255,255,255,.86)}
+
+@media(max-width:1100px){
+  .hero-card .glass-panel{left:30px;right:30px;top:30px;bottom:30px;padding:50px 26px 26px}
+  .hero-portrait-wrap{top:72px;right:42px;bottom:30px;width:min(49%,300px)}
+  .hero-card .hero-stat-grid{left:58px;bottom:74px;grid-template-columns:repeat(2,116px);gap:14px}
+  .hero-card .hero-stat-grid div{min-height:108px;padding:17px 18px}
+}
+@media(max-width:850px){
+  .hero-card .glass-panel{left:22px;right:22px;top:22px;bottom:22px;padding:34px 20px 20px;border-radius:24px}
+  .hero-card .glass-panel h2{font-size:clamp(34px,10vw,48px);max-width:230px}
+  .hero-portrait-wrap{top:78px;right:24px;bottom:22px;width:min(47%,230px)}
+  .hero-card .hero-stat-grid{left:42px;bottom:52px;grid-template-columns:repeat(2,94px);gap:10px}
+  .hero-card .hero-stat-grid div{min-height:92px;padding:14px 14px;border-radius:18px}
+  .hero-card .hero-stat-grid strong{font-size:24px;margin-bottom:8px}
+  .hero-card .hero-stat-grid span{font-size:12px;line-height:1.45}
+}
+@media(max-width:520px){
+  .hero-card .glass-panel{left:18px;right:18px;top:18px;bottom:18px;padding:26px 16px 16px;border-radius:22px}
+  .hero-card .glass-panel h2{font-size:34px;max-width:180px}
+  .hero-card .panel-label{font-size:10px}
+  .hero-card .status-dot{width:10px;height:10px;margin-bottom:12px}
+  .hero-portrait-wrap{top:78px;right:16px;bottom:18px;width:min(46%,172px)}
+  .hero-card .hero-stat-grid{left:32px;bottom:42px;grid-template-columns:repeat(2,76px);gap:8px}
+  .hero-card .hero-stat-grid div{min-height:78px;padding:11px 10px;border-radius:15px}
+  .hero-card .hero-stat-grid strong{font-size:19px;margin-bottom:5px}
+  .hero-card .hero-stat-grid span{font-size:10px;line-height:1.35}
+}
+
+/* Final approved hero polish: smaller/lower 01 + 02 cards and larger clear photo */
+.hero-card .hero-portrait-wrap{
+  top:66px;
+  right:42px;
+  bottom:30px;
+  width:min(54%,360px);
+  z-index:4;
+}
+.hero-card .hero-stat-grid{
+  left:64px;
+  bottom:56px;
+  grid-template-columns:repeat(2,112px);
+  gap:16px;
+  z-index:10;
+}
+.hero-card .hero-stat-grid div{
+  min-height:94px;
+  padding:15px 18px;
+  border-radius:20px;
+}
+.hero-card .hero-stat-grid strong{font-size:25px;margin-bottom:8px}
+.hero-card .hero-stat-grid span{font-size:13px;line-height:1.42}
+.hero-card .hero-stat-grid div:nth-child(2){z-index:12}
+@media(max-width:1100px){
+  .hero-card .hero-portrait-wrap{top:62px;right:34px;bottom:28px;width:min(53%,330px)}
+  .hero-card .hero-stat-grid{left:58px;bottom:48px;grid-template-columns:repeat(2,102px);gap:13px}
+  .hero-card .hero-stat-grid div{min-height:88px;padding:14px 16px;border-radius:19px}
+  .hero-card .hero-stat-grid strong{font-size:23px;margin-bottom:7px}
+  .hero-card .hero-stat-grid span{font-size:12px;line-height:1.38}
+}
+@media(max-width:850px){
+  .hero-card .hero-portrait-wrap{top:62px;right:18px;bottom:22px;width:min(52%,258px)}
+  .hero-card .hero-stat-grid{left:42px;bottom:30px;grid-template-columns:repeat(2,82px);gap:8px}
+  .hero-card .hero-stat-grid div{min-height:70px;padding:9px 11px;border-radius:15px}
+  .hero-card .hero-stat-grid strong{font-size:19px;margin-bottom:4px}
+  .hero-card .hero-stat-grid span{font-size:10px;line-height:1.28}
+}
+@media(max-width:520px){
+  .hero-card .hero-portrait-wrap{top:62px;right:12px;bottom:18px;width:min(51%,190px)}
+  .hero-card .hero-stat-grid{left:30px;bottom:24px;grid-template-columns:repeat(2,66px);gap:7px}
+  .hero-card .hero-stat-grid div{min-height:60px;padding:8px 8px;border-radius:13px}
+  .hero-card .hero-stat-grid strong{font-size:16px;margin-bottom:3px}
+  .hero-card .hero-stat-grid span{font-size:8.6px;line-height:1.24}
+}
+
+
+/* ===== TRM Final GitHub Responsive Patch =====
+   Ready for desktop, tablet and mobile upload.
+   Keeps the portrait inside the card; only the 02 glass card can sit above the photo.
+*/
+html,body{overflow-x:hidden}
+.hero-card{min-height:520px;max-width:620px;margin-inline:auto}
+.hero-card .glass-panel{overflow:hidden}
+.hero-card .hero-portrait-wrap{
+  top:60px;
+  right:42px;
+  bottom:42px;
+  width:min(55%,370px);
+  z-index:4;
+}
+.hero-card .hero-portrait{object-position:bottom center}
+.hero-card .hero-stat-grid{
+  left:64px;
+  bottom:56px;
+  grid-template-columns:repeat(2,112px);
+  gap:16px;
+  z-index:10;
+}
+.hero-card .hero-stat-grid div:nth-child(1){z-index:10}
+.hero-card .hero-stat-grid div:nth-child(2){z-index:14}
+@media(min-width:1181px){
+  .hero-card{max-width:none;margin-inline:0}
+}
+@media(max-width:1100px){
+  .hero-card{min-height:500px}
+  .hero-card .hero-portrait-wrap{top:58px;right:34px;bottom:38px;width:min(54%,340px)}
+  .hero-card .hero-stat-grid{left:58px;bottom:48px;grid-template-columns:repeat(2,102px);gap:13px}
+}
+@media(max-width:850px){
+  .hero-card{min-height:390px;max-width:560px}
+  .hero-card .hero-portrait-wrap{top:60px;right:18px;bottom:30px;width:min(52%,258px)}
+  .hero-card .hero-stat-grid{left:42px;bottom:34px;grid-template-columns:repeat(2,82px);gap:8px}
+}
+@media(max-width:520px){
+  .hero-card{min-height:350px;border-radius:28px}
+  .hero-card .glass-panel{left:16px;right:16px;top:16px;bottom:16px;padding:24px 14px 14px;border-radius:20px}
+  .hero-card .glass-panel h2{font-size:32px;max-width:174px;line-height:1.12}
+  .hero-card .hero-portrait-wrap{top:60px;right:10px;bottom:26px;width:min(52%,198px)}
+  .hero-card .hero-stat-grid{left:26px;bottom:28px;grid-template-columns:repeat(2,66px);gap:7px}
+  .hero-card .hero-stat-grid div{min-height:58px;padding:8px 8px;border-radius:13px}
+  .hero-card .hero-stat-grid strong{font-size:16px;margin-bottom:3px}
+  .hero-card .hero-stat-grid span{font-size:8.6px;line-height:1.22}
+}
+@media(max-width:380px){
+  .hero-card{min-height:330px}
+  .hero-card .hero-portrait-wrap{top:64px;right:8px;bottom:24px;width:min(51%,170px)}
+  .hero-card .hero-stat-grid{left:22px;bottom:24px;grid-template-columns:repeat(2,61px);gap:6px}
+}
