@@ -419,7 +419,7 @@ main{width:100%;overflow:hidden}.site-header,.section,.site-footer{max-width:cal
 .hero-card .hero-portrait-wrap{
   top:66px;
   right:42px;
-  bottom:25px;
+  bottom:30px;
   width:min(54%,360px);
   z-index:4;
 }
